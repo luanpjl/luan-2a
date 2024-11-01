@@ -1,7 +1,7 @@
 :root{
-    --texto-principal: rgb(58, 55, 55);
-    --texto-pergunta: rgb(73, 6, 6);
-    --texto-resposta: black;
+    --texto-principal: rgb(255, 255, 255);
+    --texto-pergunta: rgb(255, 255, 255);
+    --texto-resposta: rgb(255, 254, 254);
 }
 
 body {
@@ -26,12 +26,14 @@ body {
     text-align: center;
     border: 1px solid var(--texto-principal);
     height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 300ms ease-in-out;
 }
 
 .cartao__conteudo h3 {
     color: var(--texto-principal);
     border: var(--texto-principal);
-    background-color: rgb(149, 72, 194);
+    background-color: rgb(105, 34, 114);
     text-align: left;
     padding: 0.5rem;
     position: absolute;
@@ -40,8 +42,21 @@ body {
     font-size: 1vw;
 }
 
+.cartao__conteudo__pergunta{
+    color:var(--texto-pergunta);
+    font-size: 20px;
+    font-weight: 500;
+    margin-left: 4em;
+}
+
+.cartao__conteudo__resposta{
+    color:var(--texto-resposta);
+    margin-left: 4em;
+    font-weight: 500;
+}
+
 footer {
-    background-color: black;
+    background-color: rgb(255, 255, 255);
     color: white;
     position: fixed;
     bottom: 0;
@@ -53,4 +68,8 @@ footer p {
     text-align: center;
     font-size: 0.6rem;
     margin-top: 0.5rem;
+}
+
+.cartao:hover .cartao__conteudo {
+    transform: rotateY(180deg);
 }
