@@ -5,59 +5,75 @@
 }
 
 body {
-    background: url(gengar-pictures-sps3d24tu0rtbfdm.jpg);
+    background: url(d8a46d2f483bf343643c5a112097958f.png);
     background-repeat: no-repeat;
     background-size: 100%;
     font-family: Bai Jamjuree;
 }
 
-#container{
+#container {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 3rem;
+    gap: 1em;
 }
 
 .cartao {
-    margin: 1rem 1rem;
-    height: 20rem;
-    flex-grow: 1;
-    flex-basis: calc(33% - 6rem);
-}
-
-.cartao__conteudo{
-    text-align: center;
-    border: 1px solid var(--texto-principal);
-    height: 100%;
-    transform-style: preserve-3d;
-    transition: transform 300ms ease-in-out;
+ margin: 1rem 1rem;
+ height: 20rem;
+ flex-grow: 1;
+ flex-basis: calc(33% - 6rem);
 }
 
 .cartao__conteudo h3 {
     color: var(--texto-principal);
-    border: var(--texto-principal);
-    background-color: rgb(105, 34, 114);
+    border: 1px solid var(var--texto-principal);
     text-align: left;
     padding: 0.5rem;
     position: absolute;
     margin: 0.6rem;
     border-radius: 0.6rem;
     font-size: 1vw;
+    backface-visibility: hidden;
+}
+
+.cartao__conteudo {
+    text-align: center;
+    background-color: rgb(241, 222, 115);
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 300ms ease-in-out;
 }
 
 .cartao__conteudo__pergunta{
-    color:var(--texto-pergunta);
-    font-size: 20px;
-    font-weight: 500;
-    margin-left: 4em;
+ color: var(--texto-pergunta);
+ font-size: 20px;
+ font-weight: 300;
+ margin-top: 3em;
 }
 
 .cartao__conteudo__resposta{
-    color:var(--texto-resposta);
-    margin-left: 4em;
+    color: var(--texto-resposta);
+    font-size: 20px;
+ font-weight: 300;
+ margin-top: 3em;
+ transform: rotateY(180deg);
+}
+
+.cartao__conteudo__pergunta p {
+    color: var(--text-color);
     font-weight: 500;
 }
 
+.cartao__conteudo__resposta p {
+    color: var(--card-back-color);
+    font-weight: 700;
+}
+
 footer {
-    background-color: rgb(255, 255, 255);
-    color: white;
+    background-color: rgb(247, 247, 247);
+    color: rgb(30, 0, 85);
     position: fixed;
     bottom: 0;
     width: 100%;
@@ -72,4 +88,8 @@ footer p {
 
 .cartao:hover .cartao__conteudo {
     transform: rotateY(180deg);
+}
+
+.cartao__conteudo__pergunta, .cartao__conteudo__resposta {
+  backface-visibility: hidden;
 }
